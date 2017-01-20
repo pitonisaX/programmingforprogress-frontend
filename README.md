@@ -1,3 +1,8 @@
+
+
+https://travis-ci.org/pitonisaX/programmingforprogress-frontend.svg?branch=master
+
+
 #### Clone me!
 
 `git clone https://github.com/hackoregon/programmingforprogress-frontend.git`
