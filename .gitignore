@@ -1,5 +1,8 @@
+
+node_modules
+
 # Build and aws credentials
-.travis.yml
+# .travis.yml
 
 # Logs
 logs
