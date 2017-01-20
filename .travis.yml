@@ -5,8 +5,13 @@ before_install: npm install mocha
 install: npm install
 deploy:
   provider: s3
-  access_key_id: AKIAJMJ6MPDZAQWY3M2Q
+ # You can refer to environment variables from Travis repo settings!
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+ # Name of the S3 bucket to which your site should be uploaded.
   bucket: fe1.programmingforprogress.com
-  region: us-west-2
-  secret_access_key:
-    secure: bS5IoydzaUpY+SWh0owIsURZDbMmrLtye6p4TYV8PgHs6BE1uMDIoB7hla1y+wKn2N2hBGlHblbjHzw8hy5D7Mt0X0rmxkD0RuE1Nv7Y3nfqhOao+pqv5OLuUifwo+V1zDNhOnv61GjDEzeD3sm8P99QDRviVXerlMD+dsqmn4cDI3vPIggq0D5euEkoZe+q7rdhj3F8ygtDDeTpYrSLv90xQByk3FbTxVd/8kwbc2STixJgYtMAzRJr/ujU7rifp33kbE1lX6tl+ZPp7qXQq4tSorfhn88SvCHIYDrIbW8y62D5Ufp85Bb0S0PJpzZwUjarCFfjqbyhpbB/XVtJzwOzWpRgSeBdPoR6h7IxC/LWkJea4nWBUacnX21xJfzLTvuu1XvH3kRvesezwPzCQA1RCJct/s+31KbqC/MCuuQ+i6SDK+K9fsA/jvZvroasSlyIUE89bnyQea3vUBoZbtBPFSeI0qUvBK3Laqi3OXtmIkpnP5qKSFNiHEaAXTRFJoIcTVJzu2Ew6l08TBhvK+Zh4b6ewusJm3/tjYL2tpy+o5t46LXvYq8KOPuaM/ffs+T3pE0EGoDPtJqxvLD2/vIO1O/jxjT/beexZi+srlKXM/ZfdfCJvrCqLMqKpVfXm3IR1hjll79wPMMTKLcU/bYYEcpR5u2Uyipx8HlqOcM=
+ # Prevent Travis from deleting your built site so it can be uploaded.
+  skip_cleanup: true
+  acl: ''
+  on:
+    repo: pitonisaX/programmingforprogress-frontend
