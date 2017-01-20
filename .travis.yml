@@ -12,6 +12,5 @@ deploy:
   bucket: fe1.programmingforprogress.com
  # Prevent Travis from deleting your built site so it can be uploaded.
   skip_cleanup: true
-  acl: ''
   on:
     repo: pitonisaX/programmingforprogress-frontend
